@@ -45,13 +45,9 @@ def tokenizer_porter(text):
 porter = PorterStemmer()
 
 if  __name__ == "__main__":
-
-
+    
     nltk.download('stopwords')
     stop = stopwords.words('english')
-
-
-
 
     # change the `basepath` to the directory of the
     # unzipped movie dataset
@@ -80,7 +76,6 @@ if  __name__ == "__main__":
 
     df['review'] = df['review'].apply(preprocessor)
 
-
     X_train = df.loc[:25000, 'review'].values
     y_train = df.loc[:25000, 'sentiment'].values
     X_test = df.loc[25000:, 'review'].values
@@ -88,7 +83,6 @@ if  __name__ == "__main__":
     tfidf = TfidfVectorizer(strip_accents=None,
                             lowercase=False,
                             preprocessor=None)
-
 
     param_grid = [{'vect__ngram_range': [(1, 1)],
                    'vect__stop_words': [stop, None],
@@ -107,15 +101,11 @@ if  __name__ == "__main__":
     lr_tfidf = Pipeline([('vect', tfidf),
                          ('clf', LogisticRegression(random_state=0))])
 
-    print('hello')
-
-
     gs_lr_tfidf = GridSearchCV(lr_tfidf, param_grid,
                                scoring='accuracy',
                                cv=2,
                                verbose=3,
                                n_jobs=-1)
-    print('hello')
 
     gs_lr_tfidf.fit(X_train, y_train)
 
