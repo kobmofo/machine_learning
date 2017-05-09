@@ -14,4 +14,5 @@
 from ch12 import mnist
 
 mnist = mnist()
-mnist.plot_7s()
+mnist.plot_nn_mlp()
+# mnist.mlp_gc_fit()
