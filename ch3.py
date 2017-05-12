@@ -1,3 +1,8 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import warnings
+import os
+
 from sklearn                import datasets
 from sklearn                import __version__  as sklearn_version
 from sklearn.preprocessing  import StandardScaler
@@ -18,9 +23,6 @@ if Version(sklearn_version) < '0.18':
 else:
     from sklearn.model_selection import train_test_split
 
-import numpy as np
-import matplotlib.pyplot as plt
-import warnings
 
 def versiontuple(v):
     return tuple(map(int, (v.split("."))))
@@ -104,6 +106,7 @@ class ch3(object):
         ppn.fit(X_train_std, y_train)
 
         y_pred = ppn.predict(X_test_std)
+        print('Perceptron')
         print('Misclassified samples: %d' % (y_test != y_pred).sum())
         print('Accuracy: %.2f' % accuracy_score(y_test, y_pred))
 
@@ -117,7 +120,8 @@ class ch3(object):
         plt.legend(loc='upper left')
 
         plt.tight_layout()
-        # plt.savefig('./figures/iris_perceptron_scikit.png', dpi=300)
+        if not os.path.exists('./figures/iris_perceptron_scikit.png'):
+            plt.savefig('./figures/iris_perceptron_scikit.png', dpi=300)
         plt.show()
 
     def plot_logistic_reg(self):
@@ -130,6 +134,7 @@ class ch3(object):
         lr.fit(X_train_std, y_train)
 
         y_pred = lr.predict(X_test_std)
+        print('Logistic Regression')
         print('Misclassified samples: %d' % (y_test != y_pred).sum())
         print('Accuracy: %.2f' % accuracy_score(y_test, y_pred))
 
@@ -142,7 +147,8 @@ class ch3(object):
         plt.ylabel('petal width [standardized]')
         plt.legend(loc='upper left')
         plt.tight_layout()
-        # plt.savefig('./figures/logistic_regression.png', dpi=300)
+        if not os.path.exists('./figures/logistic_regression.png'):
+            plt.savefig('./figures/logistic_regression.png', dpi=300)
         plt.show()
 
     def plot_svc(self):
@@ -155,6 +161,7 @@ class ch3(object):
         svm.fit(X_train_std, y_train)
 
         y_pred = svm.predict(X_test_std)
+        print('SVC')
         print('Misclassified samples: %d' % (y_test != y_pred).sum())
         print('Accuracy: %.2f' % accuracy_score(y_test, y_pred))
 
@@ -168,7 +175,8 @@ class ch3(object):
         plt.ylabel('petal width [standardized]')
         plt.legend(loc='upper left')
         plt.tight_layout()
-        # plt.savefig('./figures/support_vector_machine_linear.png', dpi=300)
+        if not os.path.exists('./figures/support_vector_machine_linear.png'):
+            plt.savefig('./figures/support_vector_machine_linear.png', dpi=300)
         plt.show()
 
     def plot_svc_rbf(self):
@@ -181,6 +189,7 @@ class ch3(object):
         svm.fit(X_train_std, y_train)
 
         y_pred = svm.predict(X_test_std)
+        print('SVC RBF')
         print('Misclassified samples: %d' % (y_test != y_pred).sum())
         print('Accuracy: %.2f' % accuracy_score(y_test, y_pred))
 
@@ -193,7 +202,8 @@ class ch3(object):
         plt.ylabel('petal width [standardized]')
         plt.legend(loc='upper left')
         plt.tight_layout()
-        # plt.savefig('./figures/support_vector_machine_rbf_iris_1.png', dpi=300)
+        if not os.path.exists('./figures/support_vector_machine_rbf_iris_1.png'):
+            plt.savefig('./figures/support_vector_machine_rbf_iris_1.png', dpi=300)
         plt.show()
 
     def plot_decision_tree(self):
@@ -206,6 +216,7 @@ class ch3(object):
         tree.fit(X_train, y_train)
 
         y_pred = tree.predict(X_test)
+        print('Decision Tree')
         print('Misclassified samples: %d' % (y_test != y_pred).sum())
         print('Accuracy: %.2f' % accuracy_score(y_test, y_pred))
 
@@ -218,7 +229,8 @@ class ch3(object):
         plt.ylabel('petal width [cm]')
         plt.legend(loc='upper left')
         plt.tight_layout()
-        # plt.savefig('./figures/decision_tree_decision.png', dpi=300)
+        if not os.path.exists('./figures/decision_tree_decision.png'):
+            plt.savefig('./figures/decision_tree_decision.png', dpi=300)
         plt.show()
 
     def plot_random_forest(self):
@@ -234,6 +246,7 @@ class ch3(object):
         forest.fit(X_train, y_train)
 
         y_pred = forest.predict(X_test)
+        print('Random Forest')
         print('Misclassified samples: %d' % (y_test != y_pred).sum())
         print('Accuracy: %.2f' % accuracy_score(y_test, y_pred))
 
@@ -246,7 +259,8 @@ class ch3(object):
         plt.ylabel('petal width [cm]')
         plt.legend(loc='upper left')
         plt.tight_layout()
-        # plt.savefig('./figures/random_forest.png', dpi=300)
+        if not os.path.exists('./figures/random_forest.png'):
+            plt.savefig('./figures/random_forest.png', dpi=300)
         plt.show()
 
     def plot_kneighbors(self):
@@ -259,6 +273,7 @@ class ch3(object):
         knn.fit(X_train_std, y_train)
 
         y_pred = knn.predict(X_test_std)
+        print('K_neighbors')
         print('Misclassified samples: %d' % (y_test != y_pred).sum())
         print('Accuracy: %.2f' % accuracy_score(y_test, y_pred))
 
@@ -272,5 +287,6 @@ class ch3(object):
         plt.ylabel('petal width [standardized]')
         plt.legend(loc='upper left')
         plt.tight_layout()
-        # plt.savefig('./figures/k_nearest_neighbors.png', dpi=300)
+        if not os.path.exists('./figures/k_nearest_neighbors.png'):
+            plt.savefig('./figures/k_nearest_neighbors.png', dpi=300)
         plt.show()
