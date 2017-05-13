@@ -118,7 +118,7 @@ class ch3(object):
         plt.xlabel('petal length [standardized]')
         plt.ylabel('petal width [standardized]')
         plt.legend(loc='upper left')
-
+        plt.title('Perceptron')
         plt.tight_layout()
         if not os.path.exists('./figures/iris_perceptron_scikit.png'):
             plt.savefig('./figures/iris_perceptron_scikit.png', dpi=300)
@@ -146,6 +146,7 @@ class ch3(object):
         plt.xlabel('petal length [standardized]')
         plt.ylabel('petal width [standardized]')
         plt.legend(loc='upper left')
+        plt.title('Logistic Regression')
         plt.tight_layout()
         if not os.path.exists('./figures/logistic_regression.png'):
             plt.savefig('./figures/logistic_regression.png', dpi=300)
@@ -174,6 +175,7 @@ class ch3(object):
         plt.xlabel('petal length [standardized]')
         plt.ylabel('petal width [standardized]')
         plt.legend(loc='upper left')
+        plt.title('SVC')
         plt.tight_layout()
         if not os.path.exists('./figures/support_vector_machine_linear.png'):
             plt.savefig('./figures/support_vector_machine_linear.png', dpi=300)
@@ -201,6 +203,7 @@ class ch3(object):
         plt.xlabel('petal length [standardized]')
         plt.ylabel('petal width [standardized]')
         plt.legend(loc='upper left')
+        plt.title('SVC RBF')
         plt.tight_layout()
         if not os.path.exists('./figures/support_vector_machine_rbf_iris_1.png'):
             plt.savefig('./figures/support_vector_machine_rbf_iris_1.png', dpi=300)
@@ -228,6 +231,7 @@ class ch3(object):
         plt.xlabel('petal length [cm]')
         plt.ylabel('petal width [cm]')
         plt.legend(loc='upper left')
+        plt.title('Decision Tree')
         plt.tight_layout()
         if not os.path.exists('./figures/decision_tree_decision.png'):
             plt.savefig('./figures/decision_tree_decision.png', dpi=300)
@@ -258,6 +262,7 @@ class ch3(object):
         plt.xlabel('petal length [cm]')
         plt.ylabel('petal width [cm]')
         plt.legend(loc='upper left')
+        plt.title('Random Forest')
         plt.tight_layout()
         if not os.path.exists('./figures/random_forest.png'):
             plt.savefig('./figures/random_forest.png', dpi=300)
@@ -286,6 +291,7 @@ class ch3(object):
         plt.xlabel('petal length [standardized]')
         plt.ylabel('petal width [standardized]')
         plt.legend(loc='upper left')
+        plt.title('K Nearest Neighbors')
         plt.tight_layout()
         if not os.path.exists('./figures/k_nearest_neighbors.png'):
             plt.savefig('./figures/k_nearest_neighbors.png', dpi=300)
