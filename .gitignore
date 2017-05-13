@@ -2,3 +2,4 @@
 /mnist/*.csv
 movie_data.csv
 multiple_figs_demo.py
+/figures/*.png
