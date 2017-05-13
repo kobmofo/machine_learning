@@ -45,7 +45,7 @@ def tokenizer_porter(text):
 porter = PorterStemmer()
 
 if  __name__ == "__main__":
-    
+
     nltk.download('stopwords')
     stop = stopwords.words('english')
 
@@ -103,7 +103,7 @@ if  __name__ == "__main__":
 
     gs_lr_tfidf = GridSearchCV(lr_tfidf, param_grid,
                                scoring='accuracy',
-                               cv=2,
+                               cv=5,
                                verbose=3,
                                n_jobs=-1)
 
